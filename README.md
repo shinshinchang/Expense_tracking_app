@@ -18,10 +18,10 @@
 彈性擴展：目前為測試階段，未來計畫加入更多幣別與旅遊開支專屬分類。
 
 ## 🛠️ 技術架構 (Tech Stack)
-開發語言: Python 3.10+
-機器人框架: discord.py (Slash Commands / App Commands)
-資料庫: MySQL 8.0 (由 mysql-connector-python 驅動)
-雲端環境: Oracle Cloud Infrastructure (OCI) - Ubuntu Server 22.04 LTS
+開發語言: Python 3.10+\
+機器人框架: discord.py (Slash Commands / App Commands)\
+資料庫: MySQL 8.0 (由 mysql-connector-python 驅動)\
+雲端環境: Oracle Cloud Infrastructure (OCI) - Ubuntu Server 22.04 LTS\
 連線工具: SSH (RSA 4096-bit key), Screen (後台持久化執行)
 
 ## 📊 資料庫關聯設計 (ERD)
@@ -38,13 +38,42 @@ CREATE TABLE expenses (\
 );
 
 ## 🚀 部署與維運 (Deployment)
-環境隔離：使用 Python venv 虛擬環境，避免套件衝突。
-機密管理：使用 .env 檔案管理 Discord Token 與資料庫密碼，防止敏感資訊外洩至 GitHub。
-異地維運：透過 ssh 遠端連線，並利用 screen 實現 24/7 不間斷服務。
+環境隔離：使用 Python venv 虛擬環境，避免套件衝突。\
+機密管理：使用 .env 檔案管理 Discord Token 與資料庫密碼，防止敏感資訊外洩至 GitHub。\
+異地維運：透過 ssh 遠端連線，並利用 screen 實現 24/7 不間斷服務。\
 動態擴展：透過雲端控制台 VCN 設定防火牆（Security List），嚴格控管 3306 與 SSH 埠位。
 
 ## 📈 未來展望 (Roadmap)
-[ ] 加入 matplotlib 繪製圓餅圖，讓報表視覺化。
-[ ] 支援 CSV 匯出功能，方便導入 Excel 進行個人理財分析。
-[ ] 增加「預算提醒」功能，當本月支出超過設定值時自動警告。
+[ ] 加入 matplotlib 繪製圓餅圖，讓報表視覺化。\
+[ ] 支援 CSV 匯出功能，方便導入 Excel 進行個人理財分析。\
+[ ] 增加「預算提醒」功能，當本月支出超過設定值時自動警告。\
 [ ] 完善 /jpy 功能，加入更多匯率 API 備援。
+
+
+## 好用ubuntu代碼
+執行ubuntu: ssh -i "檔案位址" ubuntu@64.110.106.255\
+
+回到專案目錄: cd my_bot\
+
+建立虛擬環境: source venv/bin/activate\
+
+修改程式碼:
+1. nano main.py 進入程式碼
+2. ctrl+k 全部刪除
+3. ctrl+O 存檔(+enter)
+4. ctrl+x 離開
+
+查看資料庫:
+1. sudo mysql -u bot_user -p 進入(要輸入密碼)
+2. USE discord_bot_db; 切換資料庫
+3. SELECT * FROM expenses ORDER BY created_at DESC LIMIT 10; 查詢最新10筆資料
+4. Exit 離開
+
+啟動: python3 main.py
+
+丟回雲端空間:
+1. 回到後台： screen -r my_bot
+2. 停止： 按 Ctrl + C
+3. 啟動： python3 main.py
+4. 離開： 按 Ctrl + A 再按 D
+5. 確認後台列表: screen -ls
