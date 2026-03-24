@@ -51,11 +51,11 @@ CREATE TABLE expenses (\
 
 
 ## 好用ubuntu代碼
-執行ubuntu: ssh -i "檔案位址" ubuntu@64.110.106.255\
+執行ubuntu: ssh -i "檔案位址" ubuntu@64.110.106.255
 
-回到專案目錄: cd my_bot\
+回到專案目錄: cd my_bot
 
-建立虛擬環境: source venv/bin/activate\
+建立虛擬環境: source venv/bin/activate
 
 修改程式碼:
 1. nano main.py 進入程式碼
