@@ -72,7 +72,7 @@ CREATE TABLE expenses (\
 啟動: python3 main.py
 
 丟回雲端空間:
-1. 回到後台： screen -r my_bot
+1. 回到後台： screen -S my_bot
 2. 停止： 按 Ctrl + C
 3. 啟動： python3 main.py
 4. 離開： 按 Ctrl + A 再按 D
