@@ -73,7 +73,7 @@ CREATE TABLE expenses (\
 
 丟回雲端空間:
 1. 回到後台： screen -S my_bot
-2. 停止： 按 Ctrl + C
+2. 確保還在虛擬環境中: source venv/bin/activate
 3. 啟動： python3 main.py
 4. 離開： 按 Ctrl + A 再按 D
 5. 確認後台列表: screen -ls
